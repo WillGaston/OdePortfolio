@@ -23,8 +23,8 @@ export default function ContactPage() {
 
   return (
     <>
-      <div className="flex w-full h-full pt-[350px] md:pt-[0px] justify-center items-center font-serif">
-        <div className="flex flex-col md:flex-row border-2 border-black mx-4 my-8 md:m-[50px] md:h-[525px] w-full max-w-[800px] rounded-2xl bg-gray-100">
+      <div className="flex w-full h-full justify-center items-start md:items-center font-serif">
+        <div className="flex flex-col md:flex-row border-2 border-black mx-4 mb-8 md:m-0 md:h-[525px] w-full max-w-[800px] rounded-2xl bg-gray-100">
           <div className="w-full md:w-1/2 h-1/2 md:h-full mb-8 p-8 bg-gray-300 border-b-2 md:border-r-2 rounded-2xl border-black">
             <div className="mb-8">
               <h1 className="text-3xl font-bold mb-3">Contact Information</h1>
