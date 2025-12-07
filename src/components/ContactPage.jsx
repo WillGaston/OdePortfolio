@@ -29,7 +29,7 @@ export default function ContactPage() {
             <div className="mb-8">
               <h1 className="text-3xl font-bold mb-3">Contact Information</h1>
               <p className="text-sm leading-relaxed">
-                Fill out the form or reach out through one of the avenues below and I'll get back to you as soon as possible.
+                DM @avosfilm for bookings.
               </p>
             </div>
             <div className="flex items-start space-x-4 group">

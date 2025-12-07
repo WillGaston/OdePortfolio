@@ -17,9 +17,9 @@ export default function MainPage(props) {
           />
           <h1 className='text-4xl font-serif'>Odelia Lim</h1>
           <a className="text-gray-500 font-serif" href="https://instagram.com/avosfilm" target="_blank" rel="noopener noreferrer">@avosfilm</a>
-          <h3 className="text-gray-600 font-serif">Freelance Photographer</h3>
+          <h3 className="text-gray-600 font-serif">Freelance Photographer | Sydney & Singapore</h3>
           <p className="mt-4 mx-4 px-3 text-center font-serif text-sm">For over 2 years I have been capturing moments and emotions through my film.</p>
-          <p className="px-3 mb-4 mx-4 text-center font-serif text-sm">I am also a medical student and director of photography for my university medical society with experience photographing in professional events.</p>
+          <p className="px-3 mb-4 mx-4 text-center font-serif text-sm">I am also a medical student and director of photography for my university medical society with experience photographing in professional settings.</p>
           <button
             onClick={() => {
               navigate('/portfolio');
