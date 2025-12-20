@@ -8,7 +8,7 @@ export default function MainPage(props) {
 
   return (
     <div className="flex h-full w-full pt-8 md:pt-12 bg-gradient-to-b from-gray-100 to-white relative">
-      <div className="flex flex-col lg:flex-row w-full h-full max-w-7xl mx-auto">
+      <div className="flex flex-col lg:flex-row w-full h-full max-w-7xl mx-auto pt-10">
         <div className="w-full lg:w-2/5 flex flex-col justify-center items-center text-center px-6 z-10 lg:ml-[5%] mt-[30px] lg:mt-0">
           <img
             src={odeImage}
