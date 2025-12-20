@@ -6,7 +6,7 @@ export default function Header(props) {
     <header className="w-full h-[60px] sticky top-0 z-20 bg-white/90 backdrop-blur-md shadow-md flex items-center justify-between px-6 md:px-12 lg:px-16">
       <div className="flex flex-row lg:ml-[5%]">
         <Link
-          className={`text-2xl md:text-3xl lg:text-4xl font-serif font-medium text-gray-800 hover:text-gray-600 transition-colors ${
+          className={`text-1xl md:text-2xl lg:text-3xl font-serif font-medium text-gray-800 hover:text-gray-600 transition-colors ${
             props.currPage === "main" ? "underline underline-offset-4" : ""
           }`}
           to="/"
@@ -14,7 +14,7 @@ export default function Header(props) {
         >
           ODELIA LIM
         </Link>
-        <nav className="flex flex-row font-serif text-lg md:text-xl lg:text-2xl gap-4 md:gap-8 ml-8 mt-[2px] md:mt-[6px]">
+        <nav className="flex flex-row font-serif text-base md:text-lg lg:text-xl gap-2 md:gap-4 md:gap-8 ml-2 md:ml-8 md:mt-[3px] lg:mt-[6px]">
           <Link
             className={`hover:text-gray-600 transition-colors ${
               props.currPage === "portfolio"

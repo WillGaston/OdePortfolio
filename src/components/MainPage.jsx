@@ -16,7 +16,7 @@ export default function MainPage(props) {
             alt="Odelia Lim"
           />
           <div className='bg-white flex flex-col justify-center items-center text-center p-6 mb-[20px] rounded-4xl'>
-            <h1 className="text-5xl font-serif font-bold text-gray-800">
+            <h1 className="text-4xl font-serif font-bold text-gray-800">
               Odelia Lim
             </h1>
             <a
@@ -59,7 +59,7 @@ export default function MainPage(props) {
         </div>
         <div className="w-full lg:w-3/5 flex justify-center items-center mt-8 md:mt-0 z-10 md:mr-[5%] pb-[100px] md:mb-0">
           <img
-            className="hidden lg:inline h-[800px] w-[500px] lg:w-[600px] object-cover rounded-lg shadow-lg border border-white border-8"
+            className="hidden lg:inline mt-[50px] h-[700px] w-[500px] lg:w-[600px] object-cover rounded-lg shadow-lg border border-white border-8"
             src={mainImageH}
             alt="Horizontal view"
           />
