@@ -3,7 +3,7 @@ import { Instagram, Linkedin } from "lucide-react";
 
 export default function Header(props) {
   return (
-    <header className="w-full h-[60px] sticky top-0 z-20 bg-white/90 backdrop-blur-md shadow-md flex items-center justify-between px-6 md:px-12 lg:px-16">
+    <header className="w-full h-[60px] fixed top-0 z-20 bg-white/90 backdrop-blur-md shadow-md flex items-center justify-between px-6 md:px-12 lg:px-16">
       <div className="flex flex-row lg:ml-[5%]">
         <Link
           className={`text-1xl md:text-2xl lg:text-3xl font-serif font-medium text-gray-800 hover:text-gray-600 transition-colors ${
