@@ -44,18 +44,18 @@ export default function PortfolioPage() {
   const [selectedPhotoshoot, setSelectedPhotoshoot] = useState(null);
 
   const photoshoots = [
-    {id: 1, photos: getImageUrls(mhedicImages), preview: getImageUrls(mhedicPreview), title: "MHEDIC Event", subtitle: "h", tags: ['events']},
-    {id: 10, photos: getImageUrls(sydneyFilmImages), preview: getImageUrls(sydneyFilmPreview), title: "Sydney on Film", subtitle: "h", tags: ['film']},
-    {id: 3, photos: getImageUrls(scrubcrawlImages), preview: getImageUrls(scrubcrawlPreview), title: "MEDSOC Srubcrawl 2025", subtitle: "h", tags: ['parties']},
-    /* {id: 4, photos: getImageUrls(mhedicImages), preview: getImageUrls(mhedicImages), title: "MEDSOC Plant & Paint", subtitle: "h", tags: ['events']}, */
-    {id: 9, photos: getImageUrls(londonFilmImages), preview: getImageUrls(londonFilmPreview), title: "London on Film", subtitle: "h", tags: ['film']},
-    {id: 5, photos: getImageUrls(podiumImages), preview: getImageUrls(podiumPreview), title: "Podium Society Party", subtitle: "h", tags: ['events, parties']},
-    {id: 2, photos: getImageUrls(wsocImages), preview: getImageUrls(wsocPreview), title: "WSOC Events", subtitle: "h", tags: ['events']},
-    {id: 7, photos: getImageUrls(sydneyStreetImages), preview: getImageUrls(sydneyStreetPreview), title: "Street Photography in Sydney", subtitle: "h", tags: ['street']},
-    {id: 8, photos: getImageUrls(spitToManlyImages), preview: getImageUrls(spitToManlyPreview), title: "Spit Bridge to Manly Hike", subtitle: "h", tags: ['nature']},
-    {id: 11, photos: getImageUrls(otherFilmImages), preview: getImageUrls(otherFilmPreview), title: "Film", subtitle: "h", tags: ['film']},
-    {id: 12, photos: getImageUrls(botanicImages), preview: getImageUrls(botanicPreview), title: "Botanics and Flora", subtitle: "h", tags: ['nature']},
-    {id: 6, photos: getImageUrls(ntuPerfImages), preview: getImageUrls(ntuPerfPreview), title: "NTU Performance", subtitle: "h", tags: ['events']},
+    {id: 1, photos: getImageUrls(mhedicImages), preview: getImageUrls(mhedicPreview), title: "MHEDIC Event", tags: ['events']},
+    {id: 10, photos: getImageUrls(sydneyFilmImages), preview: getImageUrls(sydneyFilmPreview), title: "Sydney on Film", tags: ['film']},
+    {id: 3, photos: getImageUrls(scrubcrawlImages), preview: getImageUrls(scrubcrawlPreview), title: "MEDSOC Srubcrawl 2025", tags: ['parties']},
+    /* {id: 4, photos: getImageUrls(mhedicImages), preview: getImageUrls(mhedicImages), title: "MEDSOC Plant & Paint", tags: ['events']}, */
+    {id: 9, photos: getImageUrls(londonFilmImages), preview: getImageUrls(londonFilmPreview), title: "London on Film", tags: ['film']},
+    {id: 5, photos: getImageUrls(podiumImages), preview: getImageUrls(podiumPreview), title: "Podium Society Party", tags: ['events, parties']},
+    {id: 2, photos: getImageUrls(wsocImages), preview: getImageUrls(wsocPreview), title: "WSOC Events", tags: ['events']},
+    {id: 7, photos: getImageUrls(sydneyStreetImages), preview: getImageUrls(sydneyStreetPreview), title: "Street Photography in Sydney", tags: ['street']},
+    {id: 8, photos: getImageUrls(spitToManlyImages), preview: getImageUrls(spitToManlyPreview), title: "Spit Bridge to Manly Hike", tags: ['nature']},
+    {id: 11, photos: getImageUrls(otherFilmImages), preview: getImageUrls(otherFilmPreview), title: "Film", tags: ['film']},
+    {id: 12, photos: getImageUrls(botanicImages), preview: getImageUrls(botanicPreview), title: "Botanics and Flora", tags: ['nature']},
+    {id: 6, photos: getImageUrls(ntuPerfImages), preview: getImageUrls(ntuPerfPreview), title: "NTU Performance", tags: ['events']},
   ]
 
   return (

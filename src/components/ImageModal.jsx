@@ -20,17 +20,9 @@ export default function ImageModal(props) {
             >
               <div className="flex items-start justify-between gap-4">
                 <div className="flex-1">
-                  <div 
-                    className="inline-block px-4 py-1 rounded-full text-sm font-medium mb-3"
-                  >
-                    {props.selectedPhotoshoot.photos.length} Photos
-                  </div>
-                  <h2 className="text-4xl md:text-5xl font-bold mb-3 text-gray-900 tracking-tight">
-                    {props.selectedPhotoshoot.name}
+                  <h2 className="text-4xl md:text-5xl font-medium text-gray-900 tracking-tight font-serif">
+                    {props.selectedPhotoshoot.title}
                   </h2>
-                  <p className="text-gray-600 text-lg leading-relaxed max-w-2xl">
-                    {props.selectedPhotoshoot.description}
-                  </p>
                 </div>
                 <button
                   onClick={() => props.setSelectedPhotoshoot(null)}

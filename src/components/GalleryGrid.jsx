@@ -81,7 +81,6 @@ export default function GalleryGrid(props) {
                 onClick={() => props.setSelectedPhotoshoot(photoshoot)}
               >
                 <div className="aspect-square overflow-hidden">
-                  {console.log(photoshoot.photos)}
                   <img
                     src={Array.isArray(photoshoot.preview) ? photoshoot.preview[0] : photoshoot.preview}
                     alt={photoshoot.title}
@@ -106,9 +105,6 @@ export default function GalleryGrid(props) {
                       {photoshoot.subtitle}
                     </p>
                     <div className="flex items-center justify-between">
-                      <span className="text-xs font-serif text-gray-600">
-                        {photoshoot.numPhotos} photos
-                      </span>
                       <button
                         onClick={() => props.setSelectedPhotoshoot(photoshoot)}
                         className="px-3 py-1.5 rounded-full text-black text-xs border border-black bg-gray-200 font-serif font-medium hover:shadow-lg transition-all flex items-center gap-1"
