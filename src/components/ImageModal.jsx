@@ -1,50 +1,89 @@
 import { X } from "lucide-react"
+import { useState } from "react"
 
 export default function ImageModal(props) {
+  const [lightboxImage, setLightboxImage] = useState("")
+
   return (
     <>
       <div 
-        className="fixed inset-0 bg-black/50 z-50 overflow-y-auto"
-        onClick={() => props.setSelectedCategory(null)}
+        className="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 overflow-y-auto"
+        onClick={() => props.setSelectedPhotoshoot(null)}
       >
-        <div className="min-h-screen flex items-center justify-center p-4">
+        <div className="min-h-screen flex items-center justify-center p-4 md:p-8">
           <div 
-            className="bg-white rounded-2xl border-2 border-black max-w-4xl w-full my-8"
+            className="bg-gradient-to-br from-white to-gray-50 rounded-3xl shadow-2xl max-w-[95vw] w-full my-8 overflow-hidden"
             onClick={(e) => e.stopPropagation()}
           >
-            {/* Modal Header */}
-            <div className="bg-white border-b-2 border-black p-6 flex items-center justify-between rounded-t-2xl">
-              <div>
-                <h2 className="text-3xl font-bold mb-1">{props.selectedCategory.name}</h2>
-                <p className="text-gray-600">{props.selectedCategory.description}</p>
+            <div 
+              className="relative p-8 md:p-10"
+            >
+              <div className="flex items-start justify-between gap-4">
+                <div className="flex-1">
+                  <div 
+                    className="inline-block px-4 py-1 rounded-full text-sm font-medium mb-3"
+                  >
+                    {props.selectedPhotoshoot.photos.length} Photos
+                  </div>
+                  <h2 className="text-4xl md:text-5xl font-bold mb-3 text-gray-900 tracking-tight">
+                    {props.selectedPhotoshoot.name}
+                  </h2>
+                  <p className="text-gray-600 text-lg leading-relaxed max-w-2xl">
+                    {props.selectedPhotoshoot.description}
+                  </p>
+                </div>
+                <button
+                  onClick={() => props.setSelectedPhotoshoot(null)}
+                  className="p-2.5 hover:bg-black/5 rounded-full transition-all duration-200 group shrink-0"
+                >
+                  <X className="w-6 h-6 text-gray-600 group-hover:text-gray-900 transition-colors" />
+                </button>
               </div>
-              <button
-                onClick={() => props.setSelectedCategory(null)}
-                className="p-2 hover:bg-gray-100 rounded-lg border border-black transition-colors flex-shrink-0"
-              >
-                <X className="w-6 h-6" />
-              </button>
             </div>
-            {/* Modal Content */}
-            <div className="p-6">
-                <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-                  {(props.selectedCategory.images || [...Array(props.selectedCategory.count)]).map((img, i) => (
+
+            <div className="p-6 md:p-10">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+                {props.selectedPhotoshoot.photos.map((img, i) => {
+                  return (
                     <div
                       key={i}
-                      className="aspect-square bg-gray-200 rounded-lg border-2 border-black overflow-hidden hover:scale-105 transition-transform cursor-pointer"
+                      className="group relative rounded-2xl overflow-hidden cursor-pointer shadow-md hover:shadow-xl transition-all duration-300"
+                      style={{ aspectRatio: '3/4' }}
+                      onClick={() => setLightboxImage(img)}
                     >
-                      {typeof img === 'string' && img.startsWith('http') || (typeof img === 'string' && img.includes('/')) ? (
-                        <img src={img} alt={`${props.selectedCategory.name} ${i + 1}`} className="w-full h-full object-cover" />
-                      ) : (
-                        <div className="flex items-center justify-center text-4xl h-full">{props.selectedCategory.image}</div>
-                      )}
+                      <img 
+                        src={img} 
+                        alt={`${props.selectedPhotoshoot.title} ${i + 1}`} 
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 text-black"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                     </div>
-                  ))}
-                </div>
+                  );
+                })}
               </div>
+            </div>
           </div>
         </div>
       </div>
+      {lightboxImage && (
+        <div 
+          className="fixed inset-0 bg-black/95 backdrop-blur-md z-[60] flex items-center justify-center p-4"
+          onClick={() => setLightboxImage(null)}
+        >
+          <button
+            onClick={() => setLightboxImage(null)}
+            className="absolute top-6 right-6 p-3 bg-white/10 hover:bg-white/20 rounded-full transition-all duration-200 group"
+          >
+            <X className="w-6 h-6 text-white" />
+          </button>
+          <img 
+            src={lightboxImage} 
+            alt="Lightbox view" 
+            className="max-w-full max-h-[90vh] object-contain rounded-lg shadow-2xl"
+            onClick={(e) => e.stopPropagation()}
+          />
+        </div>
+      )}
     </>
   )
 }

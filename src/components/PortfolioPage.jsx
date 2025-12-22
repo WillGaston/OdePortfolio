@@ -2,25 +2,38 @@ import { useState } from "react";
 import GalleryGrid from "./GalleryGrid";
 import ImageModal from "./ImageModal";
 
-const conferenceImages = import.meta.glob('../assets/images/conferenceImages/*.{jpg,png,jpeg}', { eager: true });
-const conferencePreviews = import.meta.glob('../assets/images/conferencePreviews/*.{jpg,png,jpeg}', { eager: true });
+const mhedicImages = import.meta.glob('../assets/images/portfolioImages/mhedic/mhedicImages/*.{jpg,png,jpeg}', { eager: true });
+const mhedicPreview = import.meta.glob('../assets/images/portfolioImages/mhedic/mhedicPreview/*.{jpg,png,jpeg}', { eager: true });
 
-const partyImages = import.meta.glob('../assets/images/partyImages/*.{jpg,png,jpeg}', { eager: true });
-const partyPreviews = import.meta.glob('../assets/images/partyPreviews/*.{jpg,png,jpeg}', { eager: true });
+const botanicImages = import.meta.glob('../assets/images/portfolioImages/botanics/botanicImages/*.{jpg,png,jpeg}', { eager: true });
+const botanicPreview = import.meta.glob('../assets/images/portfolioImages/botanics/botanicPreviews/*.{jpg,png,jpeg}', { eager: true });
 
-const performanceImages = import.meta.glob('../assets/images/performanceImages/*.{jpg,png,jpeg}', { eager: true });
-const performancePreviews = import.meta.glob('../assets/images/performancePreviews/*.{jpg,png,jpeg}', { eager: true });
+const londonFilmImages = import.meta.glob('../assets/images/portfolioImages/londonFilm/londonFilmImages/*.{jpg,png,jpeg}', { eager: true });
+const londonFilmPreview = import.meta.glob('../assets/images/portfolioImages/londonFilm/londonFilmPreview/*.{jpg,png,jpeg}', { eager: true });
 
-const streetImages = import.meta.glob('../assets/images/streetImages/*.{jpg,png,jpeg}', { eager: true });
-const streetPreviews = import.meta.glob('../assets/images/streetPreviews/*.{jpg,png,jpeg}', { eager: true });
+const ntuPerfImages = import.meta.glob('../assets/images/portfolioImages/ntuPerformance/ntuPerfImages/*.{jpg,png,jpeg}', { eager: true });
+const ntuPerfPreview = import.meta.glob('../assets/images/portfolioImages/ntuPerformance/ntuPerfPreviews/*.{jpg,png,jpeg}', { eager: true });
 
-const travelImages = import.meta.glob('../assets/images/travelImages/*.{jpg,png,jpeg}', { eager: true });
-const travelPreviews = import.meta.glob('../assets/images/travelPreviews/*.{jpg,png,jpeg}', { eager: true });
+const otherFilmImages = import.meta.glob('../assets/images/portfolioImages/otherFilm/otherFilm/*.{jpg,png,jpeg}', { eager: true });
+const otherFilmPreview = import.meta.glob('../assets/images/portfolioImages/otherFilm/otherFilmPreview/*.{jpg,png,jpeg}', { eager: true });
 
-const botanicImages = import.meta.glob('../assets/images/botanicImages/*.{jpg,png,jpeg}', { eager: true });
-const botanicPreviews = import.meta.glob('../assets/images/botanicPreviews/*.{jpg,png,jpeg}', { eager: true });
+const podiumImages = import.meta.glob('../assets/images/portfolioImages/podiumParty/podiumImages/*.{jpg,png,jpeg}', { eager: true });
+const podiumPreview = import.meta.glob('../assets/images/portfolioImages/podiumParty/podiumPreview/*.{jpg,png,jpeg}', { eager: true });
 
-console.log(conferenceImages)
+const scrubcrawlImages = import.meta.glob('../assets/images/portfolioImages/scrubcrawl25/scrubcrawlImages/*.{jpg,png,jpeg}', { eager: true });
+const scrubcrawlPreview = import.meta.glob('../assets/images/portfolioImages/scrubcrawl25/scrubcrawlPreview/*.{jpg,png,jpeg}', { eager: true });
+
+const spitToManlyImages = import.meta.glob('../assets/images/portfolioImages/spitToManly/spitToManlyImages/*.{jpg,png,jpeg}', { eager: true });
+const spitToManlyPreview = import.meta.glob('../assets/images/portfolioImages/spitToManly/spitToManlyPreview/*.{jpg,png,jpeg}', { eager: true });
+
+const sydneyFilmImages = import.meta.glob('../assets/images/portfolioImages/sydneyFilm/sydFilmImages/*.{jpg,png,jpeg}', { eager: true });
+const sydneyFilmPreview = import.meta.glob('../assets/images/portfolioImages/sydneyFilm/sydFilmPreview/*.{jpg,png,jpeg}', { eager: true });
+
+const sydneyStreetImages = import.meta.glob('../assets/images/portfolioImages/sydneyStreet/sydStrImages/*.{jpg,png,jpeg}', { eager: true });
+const sydneyStreetPreview = import.meta.glob('../assets/images/portfolioImages/sydneyStreet/sydStrPreview/*.{jpg,png,jpeg}', { eager: true });
+
+const wsocImages = import.meta.glob('../assets/images/portfolioImages/wsoc/wsocImages/*.{jpg,png,jpeg}', { eager: true });
+const wsocPreview = import.meta.glob('../assets/images/portfolioImages/wsoc/wsocPreview/*.{jpg,png,jpeg}', { eager: true });
 
 const getImageUrls = (imageModules) => {
   console.log(imageModules)
@@ -28,68 +41,27 @@ const getImageUrls = (imageModules) => {
 };
 
 export default function PortfolioPage() {
-  const [selectedCategory, setSelectedCategory] = useState(null);
+  const [selectedPhotoshoot, setSelectedPhotoshoot] = useState(null);
 
-  const categories = [
-    {
-      id: 'conferences',
-      name: 'Conferences',
-      description: 'Corporate and professional events',
-      images: getImageUrls(conferenceImages),
-      count: getImageUrls(conferenceImages).length,
-      color: 'from-blue-500 to-blue-700',
-      preview: getImageUrls(conferencePreviews),
-    },
-    {
-      id: 'parties',
-      name: 'Parties',
-      description: 'Celebrations and university society events',
-      images: getImageUrls(partyImages),
-      count: getImageUrls(partyImages).length,
-      color: 'from-purple-500 to-pink-600',
-      preview: getImageUrls(partyPreviews),
-    },
-    {
-      id: 'performance',
-      name: 'Performance',
-      description: 'Informational and musical performances',
-      images: getImageUrls(performanceImages),
-      count: getImageUrls(performanceImages).length,
-      color: 'from-yellow-500 to-yellow-700',
-      preview: getImageUrls(performancePreviews),
-    },
-    {
-      id: 'street',
-      name: 'Street',
-      description: 'Urban Life',
-      images: getImageUrls(streetImages),
-      count: getImageUrls(streetImages).length,
-      color: 'from-gray-600 to-gray-800',
-      preview: getImageUrls(streetPreviews),
-    },
-    {
-      id: 'travel',
-      name: 'Travel',
-      description: 'Adventures captured on 35mm film',
-      images: getImageUrls(travelImages),
-      count: getImageUrls(travelImages).length,
-      color: 'from-orange-500 to-red-600',
-      preview: getImageUrls(travelPreviews),
-    },
-    {
-      id: 'botanics',
-      name: 'Botanics',
-      description: 'Nature and botanicals',
-      images: getImageUrls(botanicImages),
-      count: getImageUrls(botanicImages).length,
-      color: 'from-green-500 to-emerald-700',
-      preview: getImageUrls(botanicPreviews),
-    },
-  ];
+  const photoshoots = [
+    {id: 1, photos: getImageUrls(mhedicImages), preview: getImageUrls(mhedicPreview), title: "MHEDIC Event", subtitle: "h", tags: ['events']},
+    {id: 10, photos: getImageUrls(sydneyFilmImages), preview: getImageUrls(sydneyFilmPreview), title: "Sydney on Film", subtitle: "h", tags: ['film']},
+    {id: 3, photos: getImageUrls(scrubcrawlImages), preview: getImageUrls(scrubcrawlPreview), title: "MEDSOC Srubcrawl 2025", subtitle: "h", tags: ['parties']},
+    /* {id: 4, photos: getImageUrls(mhedicImages), preview: getImageUrls(mhedicImages), title: "MEDSOC Plant & Paint", subtitle: "h", tags: ['events']}, */
+    {id: 9, photos: getImageUrls(londonFilmImages), preview: getImageUrls(londonFilmPreview), title: "London on Film", subtitle: "h", tags: ['film']},
+    {id: 5, photos: getImageUrls(podiumImages), preview: getImageUrls(podiumPreview), title: "Podium Society Party", subtitle: "h", tags: ['events, parties']},
+    {id: 2, photos: getImageUrls(wsocImages), preview: getImageUrls(wsocPreview), title: "WSOC Events", subtitle: "h", tags: ['events']},
+    {id: 7, photos: getImageUrls(sydneyStreetImages), preview: getImageUrls(sydneyStreetPreview), title: "Street Photography in Sydney", subtitle: "h", tags: ['street']},
+    {id: 8, photos: getImageUrls(spitToManlyImages), preview: getImageUrls(spitToManlyPreview), title: "Spit Bridge to Manly Hike", subtitle: "h", tags: ['nature']},
+    {id: 11, photos: getImageUrls(otherFilmImages), preview: getImageUrls(otherFilmPreview), title: "Film", subtitle: "h", tags: ['film']},
+    {id: 12, photos: getImageUrls(botanicImages), preview: getImageUrls(botanicPreview), title: "Botanics and Flora", subtitle: "h", tags: ['nature']},
+    {id: 6, photos: getImageUrls(ntuPerfImages), preview: getImageUrls(ntuPerfPreview), title: "NTU Performance", subtitle: "h", tags: ['events']},
+  ]
+
   return (
     <>
-      <GalleryGrid categories={categories} setSelectedCategory={setSelectedCategory}/>
-      {selectedCategory && <ImageModal selectedCategory={selectedCategory} setSelectedCategory={setSelectedCategory}/>}
+      <GalleryGrid photoshoots={photoshoots} setSelectedPhotoshoot={setSelectedPhotoshoot}/>
+      {selectedPhotoshoot && <ImageModal selectedPhotoshoot={selectedPhotoshoot} setSelectedPhotoshoot={setSelectedPhotoshoot}/>}
     </>
   )
 }
