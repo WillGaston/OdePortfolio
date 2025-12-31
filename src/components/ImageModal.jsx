@@ -1,8 +1,15 @@
 import { X } from "lucide-react"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 
 export default function ImageModal(props) {
-  const [lightboxImage, setLightboxImage] = useState("")
+  const [lightboxImage, setLightboxImage] = useState("");
+
+  useEffect(() => {
+    document.body.style.overflow = 'hidden'
+    return () => {
+      document.body.style.overflow = 'unset'
+    }
+  }, [])
 
   return (
     <>
@@ -34,7 +41,7 @@ export default function ImageModal(props) {
             </div>
 
             <div className="p-6 md:p-10">
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
                 {props.selectedPhotoshoot.photos.map((img, i) => {
                   return (
                     <div

@@ -1,140 +1,126 @@
-import { MapPin, Mail, Instagram, MousePointer2 } from "lucide-react"
+import { MapPin, Mail, Instagram, ArrowUpRight, Sparkles, Globe2, MessageCircle } from "lucide-react";
+import { motion } from "framer-motion";
 import flowerImage from '../assets/images/flowercontact.png';
 
 export default function ContactPage() {
-  return (
-    <>
-      <div className=" min-h-screen bg-purple-50 font-serif">
-        <div className="relative overflow-hidden flex justify-center z-10">
-          <img
-            src={flowerImage}
-            className="rounded-4xl h-[200px] md:h-[300px] w-[800px] object-cover mb-6 mt-24 mx-4 shadow-lg border-4 border-white"
-            alt="Odelia Lim"
-          />
-          <div className="absolute top-36 md:top-46 flex items-center justify-center">
-            <div className="text-center text-black px-6 bg-white border-4 border-[#BB58BC] opacity-90 rounded-2xl">
-              <h1 className="text-3xl md:text-6xl z-10 font-serif font-medium mt-2 px-4">
-                Let's Connect
-              </h1>
-              <div className="flex items-center gap-3 mt-2 w-full max-w-md mx-auto mb-4">
-                <div className="h-0.5 flex-grow rounded-full bg-black opacity-70"></div>
-                <div className="w-1.5 h-1.5 rounded-full bg-black opacity-70"></div>
-                <h3 className="text-black font-serif text-sm whitespace-nowrap opacity-90">
-                  Get in Touch
-                </h3>
-                <div className="w-1.5 h-1.5 rounded-full bg-black opacity-70"></div>
-                <div className="h-0.5 flex-grow rounded-full bg-black opacity-70"></div>
-              </div>
-            </div>
-          </div>
-        </div>
+  const fadeInUp = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
+  };
 
-        <div className="flex flex-col max-w-4xl mx-auto px-6 py-16 z-10">
-          <div className="text-center mb-12 z-10 bg-white rounded-lg p-4 border-[#E6B2F1] border">
-            <h2 className="text-3xl font-medium mb-4">Ready to Capture Memories?</h2>
-            <p className="text-lg text-gray-700">
-              I'm available for photoshoots and events in Sydney and Singapore.
-            </p>
-            <p className="text-lg text-gray-700">
-              The best way to reach me is through Instagram DMs - @avosfilm.
-            </p>
-          </div>
-          <div className="mb-12 z-10">
-            <a
-              href="https://instagram.com/avosfilm"
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{
-                backgroundColor: '#CA6FD8',
-                transition: 'background-color 0.3s ease'
-              }}
-              onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#BB58BC'}
-              onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#CA6FD8'}
-              className="block w-full py-6 rounded-lg text-white text-center hover:shadow-xl hover:scale-105 transition-all shadow-lg border-2 border-white"
-            >
-              <div className="flex items-center justify-center gap-3">
-                <span className="text-2xl font-semibold">DM me on Instagram</span>
-                <MousePointer2 className="w-6 h-6" />
+  return (
+    <div className="min-h-screen bg-[#FDFCFD] text-slate-900 font-sans selection:bg-purple-100 overflow-x-hidden">
+      <div className="fixed inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-[-5%] right-[-10%] w-[300px] md:w-[500px] h-[300px] md:h-[500px] bg-purple-100/40 rounded-full blur-[80px] md:blur-[120px]" />
+        <div className="absolute bottom-[-5%] left-[-10%] w-[250px] md:w-[400px] h-[250px] md:h-[400px] bg-pink-50/60 rounded-full blur-[80px]" />
+      </div>
+
+      <main className="relative z-10 max-w-6xl mx-auto px-5 pt-20 md:pt-32 pb-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 items-center mb-20">
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            className="order-1 lg:order-2 flex justify-center"
+          >
+            <div className="relative w-full max-w-[280px] md:max-w-[420px]">
+              <div className="absolute -inset-3 border border-slate-100 rounded-[2rem] -z-10 hidden md:block" />
+              <div className="overflow-hidden rounded-[1.5rem] md:rounded-[2.5rem] shadow-2xl shadow-purple-900/10">
+                <img
+                  src={flowerImage}
+                  className="w-full h-auto max-h-[35vh] md:max-h-none aspect-[4/5] object-cover"
+                  alt="Odelia Lim"
+                />
               </div>
-              <div className="flex items-center justify-center gap-2">
-                <Instagram className="h-4 w-4 mt-3" />
-                <p className="text-sm mt-2 opacity-90">@avosfilm - Fastest response time</p>
-              </div>
-            </a>
-          </div>
-          <div className="border-t-2 border-[#E6B2F1] pt-12 z-10">
-            <h3 className="text-2xl font-medium mb-8 text-center bg-white lg:bg-none rounded-lg p-3 border-[#E6B2F1] border">Contact Information</h3>
+            </div>
+          </motion.div>
+          <motion.div 
+            initial="hidden" 
+            animate="visible" 
+            variants={fadeInUp}
+            className="order-2 lg:order-1 text-center lg:text-left"
+          >
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-50 border border-purple-100 text-purple-600 text-[10px] font-bold uppercase tracking-widest mb-6">
+              <Sparkles className="w-3 h-3" />
+              Available for Bookings
+            </div>
             
-            <div className="space-y-6">
-              <div className="flex gap-4 p-6 bg-gray-50 border-[#E6B2F1] border-2 shadow-lg rounded-lg justify-center items-center flex-col">
-                <div className="bg-white p-3 rounded-full shadow-sm">
-                  <MapPin className="w-6 h-6 text-gray-700" />
-                </div>
-                <div className="flex flex-col justify-center items-center">
-                  <h4 className="font-semibold text-lg mb-1">Location</h4>
-                  <p className="text-gray-700">Singapore</p>
-                  <p className="text-gray-700">Sydney, Australia</p>
-                </div>
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif leading-[1.1] mb-6">
+              Let’s create <br className="hidden md:block" />
+              <span className="italic text-purple-600">magic</span> together.
+            </h1>
+            
+            <p className="text-base md:text-lg text-slate-600 mb-8 md:mb-10 max-w-md mx-auto lg:mx-0 leading-relaxed">
+              Reach out to me below for booking enquiries - instagram DMs for the fastest response.
+            </p>
+
+            <div className="flex flex-col sm:flex-row gap-4">
+              <a
+                href="https://instagram.com/avosfilm"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group relative flex items-center justify-center gap-3 bg-slate-900 text-white px-8 py-4 rounded-xl md:rounded-2xl shadow-xl hover:bg-slate-800 transition-all active:scale-95 overflow-hidden w-full sm:w-auto"
+              >
+                <Instagram className="w-5 h-5" />
+                <span className="font-semibold tracking-wide">DM on Instagram</span>
+              </a>
+
+              <a
+                href="mailto:odelialim04@gmail.com"
+                className="flex items-center justify-center gap-3 bg-white border-2 border-slate-100 text-slate-700 px-8 py-4 rounded-xl md:rounded-2xl font-semibold hover:border-purple-200 transition-all shadow-sm w-full sm:w-auto"
+              >
+                <Mail className="w-5 h-5" />
+                Email Me
+              </a>
+            </div>
+          </motion.div>
+        </div>
+        <motion.div 
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={fadeInUp}
+          className="grid grid-cols-1 md:grid-cols-2 gap-6"
+        >
+          <div className="group p-8 rounded-[2rem] bg-white border border-slate-100 shadow-sm hover:shadow-md hover:border-purple-100 transition-all duration-300">
+            <div className="flex items-start gap-6">
+              <div className="w-14 h-14 rounded-2xl bg-purple-50 flex items-center justify-center text-purple-500 group-hover:bg-purple-500 group-hover:text-white transition-all duration-300">
+                <Globe2 className="w-7 h-7" />
               </div>
-              <div className="flex gap-4 p-6 bg-gray-50 border-[#E6B2F1] border-2 shadow-lg rounded-lg justify-center items-center flex-col">
-                <div className="bg-white p-3 rounded-full shadow-sm">
-                  <Instagram className="w-6 h-6 text-gray-700" />
-                </div>
-                <div className="flex flex-col justify-center items-center">
-                  <h4 className="font-semibold text-lg mb-1">Instagram</h4>
-                  <a 
-                    href="https://instagram.com/avosfilm" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="text-gray-700 hover:text-black transition-colors hover:scale-105 hover:underline"
-                  >
-                    @avosfilm
-                  </a>
-                </div>
-              </div>
-              <div className="flex gap-4 p-6 bg-gray-50 border-[#E6B2F1] border-2 shadow-lg rounded-lg justify-center items-center flex-col">
-                <div className="bg-white p-3 rounded-full shadow-sm">
-                  <Mail className="w-6 h-6 text-gray-700" />
-                </div>
-                <div className="flex flex-col justify-center items-center">
-                  <h4 className="font-semibold text-lg mb-1">Email</h4>
-                  <a 
-                    href="mailto:odelialim04@gmail.com"
-                    className="text-gray-700 hover:text-black transition-colors hover:scale-105 hover:underline"
-                  >
-                    odelialim04@gmail.com
-                  </a>
-                </div>
+              <div>
+                <h4 className="text-xs uppercase tracking-widest text-slate-400 font-bold mb-2">Service Areas</h4>
+                <p className="text-xl font-medium text-slate-800 mb-1">Sydney & Singapore</p>
+                <p className="text-slate-500 text-sm">Location availablility upon request</p>
               </div>
             </div>
           </div>
-          <div className="mt-12 text-center text-gray-600 bg-white z-10 rounded-lg p-3 border-[#E6B2F1] border">
-            <p>Available for bookings - DM for enquiries</p>
-            <p className="text-sm mt-2">Based in Sydney & Singapore</p>
-          </div>
-        </div>
-        <svg 
-          className="fixed top-0 left-0 w-[1000px] h-[1000px] pointer-events-none z-1"
-          viewBox="0 0 1000 1000"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <circle cx="" cy="-100" r="500" fill="#84175C" />
-        </svg>
-        <svg 
-          className="fixed top-0 left-0 w-[1000px] h-[1000px] pointer-events-none z-1"
-          viewBox="0 0 1000 1000"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <circle cx="400" cy="" r="200" fill="#BF63BB" />
-        </svg>
-        <svg 
-          className="block fixed bottom-0 right-0 w-[700px] h-[700px] pointer-events-none"
-          viewBox="0 0 700 700"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <circle cx="700" cy="850" r="450" fill="#982C7E" />
-        </svg>
-      </div>
-    </>
-  )
+          <a 
+            href="https://instagram.com/avosfilm" 
+            target="_blank"
+            className="group p-8 rounded-[2rem] bg-white border border-slate-100 shadow-sm hover:shadow-md hover:border-pink-100 transition-all duration-300"
+          >
+            <div className="flex items-start gap-6">
+              <div className="w-14 h-14 rounded-2xl bg-pink-50 flex items-center justify-center text-pink-500 group-hover:bg-pink-500 group-hover:text-white transition-all duration-300">
+                <MessageCircle className="w-7 h-7" />
+              </div>
+              <div className="flex-1">
+                <div className="flex items-center justify-between">
+                  <h4 className="text-xs uppercase tracking-widest text-slate-400 font-bold mb-2">Social Presence</h4>
+                  <ArrowUpRight className="w-4 h-4 text-slate-300 group-hover:text-pink-500 transition-colors" />
+                </div>
+                <p className="text-xl font-medium text-slate-800 mb-1">@avosfilm</p>
+                <p className="text-slate-500 text-sm">Follow for my latest pictures and street photography</p>
+              </div>
+            </div>
+          </a>
+        </motion.div>
+
+      </main>
+
+      <footer className="px-6 py-12 text-center border-t border-slate-50">
+        <p className="text-[10px] text-black uppercase tracking-[0.3em] font-medium">
+          Odelia Lim | @avosfilm
+        </p>
+      </footer>
+    </div>
+  );
 }

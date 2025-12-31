@@ -32,6 +32,9 @@ const sydneyFilmPreview = import.meta.glob('../assets/images/portfolioImages/syd
 const sydneyStreetImages = import.meta.glob('../assets/images/portfolioImages/sydneyStreet/sydStrImages/*.{jpg,png,jpeg}', { eager: true });
 const sydneyStreetPreview = import.meta.glob('../assets/images/portfolioImages/sydneyStreet/sydStrPreview/*.{jpg,png,jpeg}', { eager: true });
 
+const sgStreetImages = import.meta.glob('../assets/images/portfolioImages/singaporeStreet/sgStreetImages/*.{jpg,png,jpeg}', { eager: true });
+const sgStreetPreview = import.meta.glob('../assets/images/portfolioImages/singaporeStreet/sgStreetPreview/*.{jpg,png,jpeg}', { eager: true });
+
 const wsocImages = import.meta.glob('../assets/images/portfolioImages/wsoc/wsocImages/*.{jpg,png,jpeg}', { eager: true });
 const wsocPreview = import.meta.glob('../assets/images/portfolioImages/wsoc/wsocPreview/*.{jpg,png,jpeg}', { eager: true });
 
@@ -46,10 +49,11 @@ export default function PortfolioPage() {
   const photoshoots = [
     {id: 1, photos: getImageUrls(mhedicImages), preview: getImageUrls(mhedicPreview), title: "MHEDIC Event", tags: ['events']},
     {id: 10, photos: getImageUrls(sydneyFilmImages), preview: getImageUrls(sydneyFilmPreview), title: "Sydney on Film", tags: ['film']},
-    {id: 3, photos: getImageUrls(scrubcrawlImages), preview: getImageUrls(scrubcrawlPreview), title: "MEDSOC Srubcrawl 2025", tags: ['parties']},
     /* {id: 4, photos: getImageUrls(mhedicImages), preview: getImageUrls(mhedicImages), title: "MEDSOC Plant & Paint", tags: ['events']}, */
     {id: 9, photos: getImageUrls(londonFilmImages), preview: getImageUrls(londonFilmPreview), title: "London on Film", tags: ['film']},
     {id: 5, photos: getImageUrls(podiumImages), preview: getImageUrls(podiumPreview), title: "Podium Society Party", tags: ['events, parties']},
+    {id: 7, photos: getImageUrls(sgStreetImages), preview: getImageUrls(sgStreetPreview), title: "Street Photography in Singapore", tags: ['street']},
+    {id: 3, photos: getImageUrls(scrubcrawlImages), preview: getImageUrls(scrubcrawlPreview), title: "MEDSOC Srubcrawl 2025", tags: ['parties']},
     {id: 2, photos: getImageUrls(wsocImages), preview: getImageUrls(wsocPreview), title: "WSOC Events", tags: ['events']},
     {id: 7, photos: getImageUrls(sydneyStreetImages), preview: getImageUrls(sydneyStreetPreview), title: "Street Photography in Sydney", tags: ['street']},
     {id: 8, photos: getImageUrls(spitToManlyImages), preview: getImageUrls(spitToManlyPreview), title: "Spit Bridge to Manly Hike", tags: ['nature']},
