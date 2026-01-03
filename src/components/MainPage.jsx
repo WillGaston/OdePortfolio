@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { Instagram, ArrowRight, Sparkles } from 'lucide-react';
 import mainImageH from '../assets/images/katong.jpeg';
 import odeImage from '../assets/images/odemain.jpg';
-import lecturnImage from '../assets/images/portfolioImages/mhedic/mhedicImages/1.jpg';
+import lecturnImage from '../assets/images/portfolioImages/mhedic/mhedicImages/lecturnImage.jpg';
 import weddingMain from '../assets/images/weddingMain.jpg';
 import coupleMain from '../assets/images/coupleMain.jpg';
 
