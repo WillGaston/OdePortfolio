@@ -124,7 +124,7 @@ export default function GalleryGrid({ photoshoots, categories }) {
             );
           })}
         </main>
-	      <div className="lg:hidden fixed bottom-6 left-1/2 -translate-x-1/2 z-[70] w-[90%] max-w-sm">
+	      <div className="lg:hidden fixed bottom-6 left-1/2 -translate-x-1/2 z-[35] w-[90%] max-w-sm">
           <nav className="flex items-center justify-around gap-2 bg-black/90 backdrop-blur-md p-2 rounded-full shadow-2xl overflow-x-auto no-scrollbar">
             {categories.map((cat) => (
               <button
@@ -140,6 +140,11 @@ export default function GalleryGrid({ photoshoots, categories }) {
           </nav>
         </div>
       </div>
+      <footer className="px-6 py-12 text-center border-t border-slate-50">
+        <p className="text-[10px] text-black uppercase tracking-[0.3em] font-medium">
+          Odelia Lim | @avosfilm
+        </p>
+      </footer>
     </div>
   );
 }

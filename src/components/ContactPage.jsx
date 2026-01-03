@@ -46,7 +46,7 @@ export default function ContactPage() {
             
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif leading-[1.1] mb-6">
               Let’s create <br className="hidden md:block" />
-              <span className="italic text-purple-600">magic</span> together.
+              <span className="italic text-purple-600">magic</span>.
             </h1>
             
             <p className="text-base md:text-lg text-slate-600 mb-8 md:mb-10 max-w-md mx-auto lg:mx-0 leading-relaxed">
